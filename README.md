@@ -7,10 +7,18 @@
 - Docker Compose
 
 ### Setup
-git clone https://github.com/hammadabe/visionscopes
-cd visionscopes
-cp .env.example .env
-docker compose up
+
+### Linux
+- git clone https://github.com/hammadabe/visionscopes
+- cd visionscopes
+- cp .env.example .env
+- docker compose up
+
+### Windows
+- git clone https://github.com/HammadaBE/VisionScopes-Demo
+- cd VisionScopes-Demo
+- copy .env.example .env
+- docker compose up
 
 ### Access
 - Frontend: http://localhost:8080
