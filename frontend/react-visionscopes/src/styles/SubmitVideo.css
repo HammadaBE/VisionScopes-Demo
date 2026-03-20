@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+/* ── Card ── */
+.submitVideo-container {
+  @apply flex flex-col gap-2 relative overflow-hidden transition-all duration-300;
+  background: #161616;
+  border: 1px solid #242424;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+}
+
+.submitVideo-container:hover {
+  border-color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+
+.submitVideo-container::after {
+  content: '';
+  @apply absolute left-0 top-0 bottom-0;
+  width: 3px;
+  background: #e8ff47;
+  border-radius: 3px 0 0 3px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.submitVideo-container:hover::after {
+  opacity: 1;
+}
+
+/* ── Title ── */
+.submitVideo-title {
+  font-family: 'DM Sans', sans-serif;
+  @apply font-semibold text-base leading-tight;
+  color: #f0f0f0;
+}
+
+/* ── Description ── */
+.submitVideo-description {
+  @apply text-sm leading-relaxed;
+  color: #777;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ── Date ── */
+.submitVideo-date {
+  @apply text-xs tracking-widest uppercase;
+  color: #444;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.08em;
+}
+
+/* ── Footer row (date + delete) ── */
+.submitVideo-footer {
+  @apply flex items-center justify-between mt-1 pt-3;
+  border-top: 1px solid #1f1f1f;
+}
+
+/* ── Delete button ── */
+.delete-button {
+  @apply px-4 py-1.5 rounded-md text-xs font-semibold tracking-widest uppercase transition-all duration-200 cursor-pointer;
+  background: transparent;
+  border: 1px solid #2a2a2a;
+  color: #555;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.06em;
+}
+
+.delete-button:hover {
+  background: rgba(255,71,71,0.08);
+  border-color: #ff4747;
+  color: #ff4747;
+}
+
+.delete-button:active {
+  transform: scale(0.97);
+}

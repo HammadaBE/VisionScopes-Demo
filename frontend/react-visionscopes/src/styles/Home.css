@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --brand: #e8ff47;
+  --dark: #0e0e0e;
+  --surface: #161616;
+  --surface2: #1f1f1f;
+  --muted: #555;
+  --text: #f0f0f0;
+}
+
+body {
+  background-color: var(--dark);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ── Home wrapper ── */
+.home-wrapper {
+  @apply min-h-screen flex flex-col;
+  background-color: var(--dark);
+  
+}
+
+/* ── Hero banner ── */
+.home {
+  @apply relative flex items-center justify-center overflow-hidden;
+  height: 220px;
+  background: linear-gradient(135deg, #0e0e0e 0%, #1a1a1a 100%);
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.home::before {
+  content: '';
+  @apply absolute inset-0;
+  background: radial-gradient(ellipse at 60% 50%, rgba(232,255,71,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.title {
+  font-family: 'Bebas Neue', sans-serif;
+  @apply text-7xl tracking-widest relative z-10;
+  color: var(--text);
+  letter-spacing: 0.12em;
+}
+
+.title span {
+  color: var(--brand);
+}
+
+/* ── Main content grid ── */
+.home-content {
+  @apply flex-1 grid gap-0;
+  grid-template-columns: 1fr 380px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  gap: 2.5rem;
+}
+
+/* ── Section headings ── */
+.section-heading {
+  font-family: 'Bebas Neue', sans-serif;
+  @apply text-3xl tracking-widest mb-6;
+  color: var(--brand);
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid #2a2a2a;
+  padding-bottom: 0.75rem;
+}
+
+/* ── Videos list ── */
+.videos-panel {
+  @apply flex flex-col gap-4;
+}
+
+.videos-empty {
+  @apply text-center py-16;
+  color: var(--muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+/* ── Submit panel ── */
+.submit-panel {
+  @apply flex flex-col;
+}
+
+.submit-form {
+  @apply flex flex-col gap-4;
+  background: var(--surface);
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 1.75rem;
+}
+
+.submit-form label {
+  @apply text-xs font-semibold tracking-widest uppercase mb-1 block;
+  color: var(--muted);
+}
+
+.submit-form input[type="text"],
+.submit-form textarea {
+  @apply w-full rounded-lg px-4 py-3 text-sm outline-none transition-all duration-200;
+  background: var(--surface2);
+  border: 1px solid #2a2a2a;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  resize: none;
+}
+
+.submit-form input[type="text"]:focus,
+.submit-form textarea:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(232,255,71,0.08);
+}
+
+.submit-form textarea {
+  min-height: 100px;
+}
+
+.submit-btn {
+  @apply w-full py-3 rounded-lg font-semibold text-sm tracking-widest uppercase transition-all duration-200 cursor-pointer;
+  background: var(--brand);
+  color: var(--dark);
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.08em;
+}
+
+.submit-btn:hover {
+  background: #d4eb2e;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(232,255,71,0.2);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+/* ── Logout button ── */
+.logout-btn {
+  @apply mt-4 w-full py-3 rounded-lg text-sm tracking-widest uppercase transition-all duration-200 cursor-pointer;
+  background: transparent;
+  border: 1px solid #2a2a2a;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.08em;
+}
+
+.logout-btn:hover {
+  border-color: #ff4747;
+  color: #ff4747;
+  background: rgba(255,71,71,0.05);
+}

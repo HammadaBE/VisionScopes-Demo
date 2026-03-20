@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@import "tailwindcss";
+
+
+/* ── Full-page form layout ── */
+/* .form-page {
+  @apply min-h-screen flex items-center justify-center;
+  background-color: #0e0e0e;
+  background-image:
+    radial-gradient(ellipse at 30% 20%, rgba(232,255,71,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(232,255,71,0.03) 0%, transparent 50%);
+} */
+
+/* ── Card container ── */
+.form-container {
+  @apply flex flex-col gap-4 relative bg-black shadow-2xl shadow-gray-500/50;
+  /* background: #161616; */
+  border: 1px solid #242424;
+  border-radius: 16px;
+  padding: 2.5rem 2.25rem;
+  width: 100%;
+  max-width: 420px;
+  /* box-shadow: 0 32px 80px rgba(81, 80, 80, 0.6); */
+}
+
+.form-container::before {
+  content: '';
+  @apply absolute top-0 left-0 right-0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #e8ff47, transparent);
+  border-radius: 16px 16px 0 0;
+}
+
+/* ── Heading ── */
+.form-container h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  @apply text-5xl tracking-widest mb-2 text-center;
+  color: #f0f0f0;
+  letter-spacing: 0.12em;
+}
+
+/* ── Inputs ── */
+.form-input {
+  @apply w-full rounded-lg px-4 py-3 text-sm outline-none transition-all duration-200;
+  background: #1f1f1f;
+  border: 1px solid #2a2a2a;
+  color: #f0f0f0;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.form-input::placeholder {
+  color: #444;
+}
+
+.form-input:focus {
+  border-color: #e8ff47;
+  box-shadow: 0 0 0 3px rgba(232,255,71,0.08);
+}
+
+/* ── Primary button (Login / Register submit) ── */
+.form-button[type="submit"],
+.form-button:first-of-type {
+  @apply w-full py-3 rounded-lg font-semibold text-sm tracking-widest uppercase transition-all duration-200 cursor-pointer mt-1;
+  background: #e8ff47;
+  color: #0e0e0e;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.08em;
+}
+
+.form-button[type="submit"]:hover,
+.form-button:first-of-type:hover {
+  background: #d4eb2e;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(232,255,71,0.2);
+}
+
+.form-button[type="submit"]:disabled,
+.form-button:first-of-type:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Secondary button (switch to register/login) ── */
+.form-button[type="button"] {
+  @apply w-full py-3 rounded-lg text-sm transition-all duration-200 cursor-pointer;
+  background: transparent;
+  border: 1px solid #2a2a2a;
+  color: #666;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.form-button[type="button"]:hover {
+  border-color: #e8ff47;
+  color: #e8ff47;
+  background: rgba(232,255,71,0.04);
+}
+
+/* ── Divider between primary and secondary button ── */
+.form-button[type="button"]::before {
+  content: '';
+}
