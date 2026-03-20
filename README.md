@@ -8,7 +8,7 @@
 
 ### Setup
 
-**Before you start:** Make sure Docker Desktop is open and running
+**Before you start:** Make sure Docker Engine is running
 
 ### Linux
 - git clone https://github.com/hammadabe/visionscopes
